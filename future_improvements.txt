@@ -1,0 +1,1 @@
+add CI/CD so that create_snowflake_view triggers when there is a Github push to /sql/marts
