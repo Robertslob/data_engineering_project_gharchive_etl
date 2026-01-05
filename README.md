@@ -2,7 +2,7 @@
 
 A modern Data Engineering project that automates the journey from raw **GHArchive** JSON events to high-value analytical views. This project utilizes **Airflow** for orchestration, **DuckDB** for in-memory processing, and **Terraform** for Infrastructure as Code (IaC).
 
-## 🚀 Architecture Overview
+## Architecture Overview
 
 The pipeline ensures data integrity and scalability by separating the infrastructure, the compute-heavy transformation, and the warehouse storage logic:
 
@@ -13,14 +13,14 @@ The pipeline ensures data integrity and scalability by separating the infrastruc
     * **Transformations/Dims:** Deduplication of events and entity resolution for repositories and actors (handling renames).
     * **Marts:** Creation of business-ready, dynamic visualizations for end-user reporting.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Orchestration:** Apache Airflow
 * **Data Lake:** AWS S3
 * **Data Warehouse:** Snowflake
 * **Language:** SQL & Python
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
