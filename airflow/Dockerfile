@@ -2,14 +2,6 @@
 FROM apache/airflow:3.1.3
 
 USER airflow
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 
-# Install extra Python packages
-# Use --no-cache-dir to reduce image size
-RUN pip install --no-cache-dir \
-    boto3 \
-    requests \
-    pandas \
-    snowflake-connector-python \
-    apache-airflow-providers-amazon \
-    apache-airflow-providers-snowflake \
-    duckdb

@@ -1,0 +1,7 @@
+
+.venv/
+airflow/keys/airflow_project_gharchive_accessKeys.csv
+terraform/keys/terraform_demo_accessKeys.csv
+airflow/config/airflow.cfg
+/airflow/dags/__pycache__
+/airflow/logs
