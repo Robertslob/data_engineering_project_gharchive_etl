@@ -2,7 +2,7 @@
 
 A modern Data Engineering project that automates the journey from raw **GHArchive** JSON events to high-value analytical views. This project utilizes **Airflow** for orchestration, **DuckDB** for in-memory processing, and **Terraform** for Infrastructure as Code (IaC).
 
-## 🚀 Architecture Overview
+## Architecture Overview
 
 The pipeline ensures data integrity and scalability by separating the infrastructure, the compute-heavy transformation, and the warehouse storage logic:
 
@@ -13,14 +13,14 @@ The pipeline ensures data integrity and scalability by separating the infrastruc
     * **Transformations/Dims:** Deduplication of events and entity resolution for repositories and actors (handling renames).
     * **Marts:** Creation of business-ready, dynamic visualizations for end-user reporting.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Orchestration:** Apache Airflow
 * **Data Lake:** AWS S3
 * **Data Warehouse:** Snowflake
 * **Language:** SQL & Python
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
@@ -28,12 +28,16 @@ The pipeline ensures data integrity and scalability by separating the infrastruc
 │   ├── dags/
 │   │   ├── gharchive_through_s3_into_snowflake.py  # Main ETL (Hourly)
 │   │   └── create_snowflake_views.py               # Analytical Setup (On-demand)
-│   └── sql/
+│   ├── sql/
 │       ├── ddl/             # Schema and Table definitions
 │       ├── staging/         # S3 Parquet to Snowflake COPY logic
 │       ├── transformations/ # MERGE Staging into Core table
 │       ├── dims/            # Dimension views (Actors & Repositories)
 │       └── marts/           # High-level analytical views
+│   ├── docker-compose.yaml
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   └── .env
 │
 ├── terraform/
 │   └── main.tf              # Cloud infrastructure (S3)
